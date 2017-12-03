@@ -1,0 +1,22 @@
+{
+    "name": "youhuinet/aliyunmns",
+    "description": "Aliyun CDP api&message SDK for ThinkPHP packed by YouhuiNet",
+    "keywords": [ "aliyun", "CDP", "sdk" , "MNS" ],
+    "type": "library",
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "~6.2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Aliyun\\": "lib/",
+            "Aliyun\\Test\\": "tests/",
+            "AliyunMNS\\": "lib/MNS"
+        }
+    }
+}
