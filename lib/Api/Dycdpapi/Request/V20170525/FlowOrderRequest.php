@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Dycdp\Request\V20170525;
+namespace Dycdpapi\Request\V20170525;
 
-class ChargeByOfferRequest extends \RpcAcsRequest
+class FlowOrderRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dycdpapi", "2017-05-25", "ChargeByOffer");
+		parent::__construct("Dycdpapi", "2017-05-25", "FlowOrder");
 		$this->setMethod("POST");
 	}
 
@@ -31,15 +31,17 @@ class ChargeByOfferRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $reason;
+	private  $transferId;
 
-	private  $offerId;
+	private  $grade;
+
+	private  $orderType;
 
 	private  $resourceOwnerId;
 
-	private  $ownerId;
+	private  $paramList;
 
-	private  $outId;
+	private  $ownerId;
 
 	public function getPhoneNumber() {
 		return $this->phoneNumber;
@@ -59,22 +61,31 @@ class ChargeByOfferRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getReason() {
-		return $this->reason;
+	public function getTransferId() {
+		return $this->transferId;
 	}
 
-	public function setReason($reason) {
-		$this->reason = $reason;
-		$this->queryParameters["Reason"]=$reason;
+	public function setTransferId($transferId) {
+		$this->transferId = $transferId;
+		$this->queryParameters["TransferId"]=$transferId;
 	}
 
-	public function getOfferId() {
-		return $this->offerId;
+	public function getGrade() {
+		return $this->grade;
 	}
 
-	public function setOfferId($offerId) {
-		$this->offerId = $offerId;
-		$this->queryParameters["OfferId"]=$offerId;
+	public function setGrade($grade) {
+		$this->grade = $grade;
+		$this->queryParameters["Grade"]=$grade;
+	}
+
+	public function getOrderType() {
+		return $this->orderType;
+	}
+
+	public function setOrderType($orderType) {
+		$this->orderType = $orderType;
+		$this->queryParameters["OrderType"]=$orderType;
 	}
 
 	public function getResourceOwnerId() {
@@ -86,6 +97,15 @@ class ChargeByOfferRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getParamList() {
+		return $this->paramList;
+	}
+
+	public function setParamList($paramList) {
+		$this->paramList = $paramList;
+		$this->queryParameters["ParamList"]=$paramList;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -93,15 +113,6 @@ class ChargeByOfferRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOutId() {
-		return $this->outId;
-	}
-
-	public function setOutId($outId) {
-		$this->outId = $outId;
-		$this->queryParameters["OutId"]=$outId;
 	}
 	
 }

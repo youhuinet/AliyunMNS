@@ -17,31 +17,33 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Dycdp\Request\V20170525;
+namespace Dycdpapi\Request\V20170525;
 
-class FlowOrderRequest extends \RpcAcsRequest
+class ChargeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dycdpapi", "2017-05-25", "FlowOrder");
+		parent::__construct("Dycdpapi", "2017-05-25", "Charge");
 		$this->setMethod("POST");
 	}
 
 	private  $phoneNumber;
 
+	private  $scope;
+
+	private  $isProvince;
+
 	private  $resourceOwnerAccount;
 
-	private  $transferId;
+	private  $reason;
 
 	private  $grade;
 
-	private  $orderType;
-
 	private  $resourceOwnerId;
 
-	private  $paramList;
-
 	private  $ownerId;
+
+	private  $outId;
 
 	public function getPhoneNumber() {
 		return $this->phoneNumber;
@@ -50,6 +52,24 @@ class FlowOrderRequest extends \RpcAcsRequest
 	public function setPhoneNumber($phoneNumber) {
 		$this->phoneNumber = $phoneNumber;
 		$this->queryParameters["PhoneNumber"]=$phoneNumber;
+	}
+
+	public function getScope() {
+		return $this->scope;
+	}
+
+	public function setScope($scope) {
+		$this->scope = $scope;
+		$this->queryParameters["Scope"]=$scope;
+	}
+
+	public function getIsProvince() {
+		return $this->isProvince;
+	}
+
+	public function setIsProvince($isProvince) {
+		$this->isProvince = $isProvince;
+		$this->queryParameters["IsProvince"]=$isProvince;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -61,13 +81,13 @@ class FlowOrderRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getTransferId() {
-		return $this->transferId;
+	public function getReason() {
+		return $this->reason;
 	}
 
-	public function setTransferId($transferId) {
-		$this->transferId = $transferId;
-		$this->queryParameters["TransferId"]=$transferId;
+	public function setReason($reason) {
+		$this->reason = $reason;
+		$this->queryParameters["Reason"]=$reason;
 	}
 
 	public function getGrade() {
@@ -79,15 +99,6 @@ class FlowOrderRequest extends \RpcAcsRequest
 		$this->queryParameters["Grade"]=$grade;
 	}
 
-	public function getOrderType() {
-		return $this->orderType;
-	}
-
-	public function setOrderType($orderType) {
-		$this->orderType = $orderType;
-		$this->queryParameters["OrderType"]=$orderType;
-	}
-
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -97,15 +108,6 @@ class FlowOrderRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getParamList() {
-		return $this->paramList;
-	}
-
-	public function setParamList($paramList) {
-		$this->paramList = $paramList;
-		$this->queryParameters["ParamList"]=$paramList;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -113,6 +115,15 @@ class FlowOrderRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getOutId() {
+		return $this->outId;
+	}
+
+	public function setOutId($outId) {
+		$this->outId = $outId;
+		$this->queryParameters["OutId"]=$outId;
 	}
 	
 }

@@ -17,33 +17,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Dycdp\Request\V20170525;
+namespace Dycdpapi\Request\V20170525;
 
-class ChargeRequest extends \RpcAcsRequest
+class QueryGradesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dycdpapi", "2017-05-25", "Charge");
+		parent::__construct("Dycdpapi", "2017-05-25", "QueryGrades");
 		$this->setMethod("POST");
 	}
 
 	private  $phoneNumber;
 
-	private  $scope;
-
-	private  $isProvince;
-
 	private  $resourceOwnerAccount;
-
-	private  $reason;
-
-	private  $grade;
 
 	private  $resourceOwnerId;
 
 	private  $ownerId;
-
-	private  $outId;
 
 	public function getPhoneNumber() {
 		return $this->phoneNumber;
@@ -54,24 +44,6 @@ class ChargeRequest extends \RpcAcsRequest
 		$this->queryParameters["PhoneNumber"]=$phoneNumber;
 	}
 
-	public function getScope() {
-		return $this->scope;
-	}
-
-	public function setScope($scope) {
-		$this->scope = $scope;
-		$this->queryParameters["Scope"]=$scope;
-	}
-
-	public function getIsProvince() {
-		return $this->isProvince;
-	}
-
-	public function setIsProvince($isProvince) {
-		$this->isProvince = $isProvince;
-		$this->queryParameters["IsProvince"]=$isProvince;
-	}
-
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -79,24 +51,6 @@ class ChargeRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getReason() {
-		return $this->reason;
-	}
-
-	public function setReason($reason) {
-		$this->reason = $reason;
-		$this->queryParameters["Reason"]=$reason;
-	}
-
-	public function getGrade() {
-		return $this->grade;
-	}
-
-	public function setGrade($grade) {
-		$this->grade = $grade;
-		$this->queryParameters["Grade"]=$grade;
 	}
 
 	public function getResourceOwnerId() {
@@ -115,15 +69,6 @@ class ChargeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOutId() {
-		return $this->outId;
-	}
-
-	public function setOutId($outId) {
-		$this->outId = $outId;
-		$this->queryParameters["OutId"]=$outId;
 	}
 	
 }

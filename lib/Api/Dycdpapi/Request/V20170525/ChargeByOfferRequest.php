@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Dycdp\Request\V20170525;
+namespace Dycdpapi\Request\V20170525;
 
-class QueryGradesRequest extends \RpcAcsRequest
+class ChargeByOfferRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dycdpapi", "2017-05-25", "QueryGrades");
+		parent::__construct("Dycdpapi", "2017-05-25", "ChargeByOffer");
 		$this->setMethod("POST");
 	}
 
@@ -31,9 +31,15 @@ class QueryGradesRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $reason;
+
+	private  $offerId;
+
 	private  $resourceOwnerId;
 
 	private  $ownerId;
+
+	private  $outId;
 
 	public function getPhoneNumber() {
 		return $this->phoneNumber;
@@ -53,6 +59,24 @@ class QueryGradesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getReason() {
+		return $this->reason;
+	}
+
+	public function setReason($reason) {
+		$this->reason = $reason;
+		$this->queryParameters["Reason"]=$reason;
+	}
+
+	public function getOfferId() {
+		return $this->offerId;
+	}
+
+	public function setOfferId($offerId) {
+		$this->offerId = $offerId;
+		$this->queryParameters["OfferId"]=$offerId;
+	}
+
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -69,6 +93,15 @@ class QueryGradesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getOutId() {
+		return $this->outId;
+	}
+
+	public function setOutId($outId) {
+		$this->outId = $outId;
+		$this->queryParameters["OutId"]=$outId;
 	}
 	
 }

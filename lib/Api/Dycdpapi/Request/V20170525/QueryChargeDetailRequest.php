@@ -17,7 +17,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Dycdp\Request\V20170525;
+namespace Dycdpapi\Request\V20170525;
 
 class QueryChargeDetailRequest extends \RpcAcsRequest
 {
